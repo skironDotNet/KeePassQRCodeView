@@ -136,7 +136,7 @@ namespace KeePassQRCodeView
 			{
 				var title = SprEngine.Compile(pe.Strings.GetSafe("Title").ReadString(), context);
 				title = Uri.EscapeDataString(title); 
-				value = $"otpauth://totp/{title}?secret={value.Replace("key=", "")}";
+				value = string.Format("otpauth://totp/{0}?secret={1}",title,value.Replace("key=", ""));
 			}
 			
 			try
