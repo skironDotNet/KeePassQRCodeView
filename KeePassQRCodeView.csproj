@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\KeePass-2.41\Plugins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,9 +33,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KeePass">
+      <HintPath>..\KeePass-2.41\KeePass.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
@@ -67,12 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="keepass.version" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\KeePass-2.35-Source\KeePass\KeePass.csproj">
-      <Project>{10938016-dee2-4a25-9a5a-8fd3444379ca}</Project>
-      <Name>KeePass</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.png" />
