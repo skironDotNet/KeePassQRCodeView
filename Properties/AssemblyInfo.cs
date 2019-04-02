@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("KeePassQRCodeView")]
 [assembly: AssemblyDescription("KeePass 2.x plugin which shows QR Codes for entry fields.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Janis Estelmann")]
+[assembly: AssemblyCompany("Pawel Cioch & Janis Estelmann")]
 [assembly: AssemblyProduct("KeePass Plugin")]
 [assembly: AssemblyCopyright("Pawel Cioch & Janis Estelmann")]
 [assembly: AssemblyTrademark("")]
