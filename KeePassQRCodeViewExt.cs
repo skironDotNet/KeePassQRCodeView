@@ -135,8 +135,24 @@ namespace KeePassQRCodeView
             if (key == "otp" && value.StartsWith("key="))
             {
                 var title = SprEngine.Compile(pe.Strings.GetSafe("Title").ReadString(), context);
-                title = Uri.EscapeDataString(title);
-                value = string.Format("otpauth://totp/{0}?secret={1}", title, value.Replace("key=", ""));
+                var user = SprEngine.Compile(pe.Strings.GetSafe("UserName").ReadString(), context);
+
+                string label = null;
+                if (title == string.Empty && user == string.Empty)
+                {
+                    label = "Unknown"; //edge case when entry has no title or user, nobody would use KeePass like this but just to be bulletproof
+                }
+                else if (title == string.Empty || user == string.Empty)
+                {
+                    label = title + user;
+                }
+                else
+                {
+                    label = title + " (" + user + ")"; //Not RFC 5234, but more readable in the auth app
+                }
+
+                label = Uri.EscapeDataString(label);
+                value = string.Format("otpauth://totp/{0}?secret={1}", label, value.Replace("key=", ""));
             }
 
             try
