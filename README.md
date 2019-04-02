@@ -12,6 +12,9 @@ KeePassQRCodeView is a plug-in for KeePass 2.x which shows QR Codes for entry fi
 **Update by Pawel Cioch:**  
 QR for "otp" filed (private key) created by KeyOtp plugin now returned readable to Google Authenticator.
 
+### How to Compile .plgx ###
+Just run included **create-plgx-plugin.bat**
+
 INSTALLATION
 -----
 - Download from https://github.com/JanisEst/KeePassQRCodeView/releases
